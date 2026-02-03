@@ -4,50 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="scripts/buttons/add-book.js"></script>
+    <script src="scripts/buttons/add-book-button.js"></script>
+    <script src="scripts/buttons/close-form-button.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/initializator.js"></script>
+    <script>
+        window.onload = function () {
+            init();
+        }
+    </script>
     <link rel="stylesheet" href="styles/modal-add-book.css">
 </head>
 <body>
-    <button id="addBook" >Add Book</button>
+    <button id="addBook" onclick="addBook()">Add Book</button>
 
 
     <div id="modal-add-book-curtain" class="curtain"></div>
     <div id="modal-add-book" class="modal-add-book">
         
-        <button id="exit">X</button>
-        <div id="nazwa">
-            <h2>Nazwa Książki:</h2>
+        <button id="exit" onclick="closeForm()">X</button>
+        <div id="nazwa" class="form-field">
+            <h2 class="form-label">Nazwa książki<span class="required">*</span>:</h2>
             <input type="text">
         </div>
-        <div id="autor">
-            <h2>Autor Książki:</h2>
+        <div id="autor" class="form-field">
+            <h2 class="form-label">Autor książki:</h2>
             <input type="text">
+        </div>
+        <div id="grubosc" class="form-field">
+            <h2 class="form-label">Grubość książki<span class="required">*</span>:</h2>
+            <input type="number" min="0.5" max="10" step="0.1" value="2">
+            <h2 class="form-label">[cm]</h2>
+        </div>
+        <div id="rok" class="form-field">
+            <h2 class="form-label">Rok wydania książki:</h2>
+            <input type="text">
+        </div>
+        <div id="rok" class="form-field">
+            <h2 class="form-label">Wybierz kolor książki:</h2>
+            <input type="color" value="#aa0000">
+        </div>
+        <div id="rok" class="form-field">
+            <h2 class="form-label">Opis książki:</h2> <br/>
+            <textarea id="book-description" rows="5" cols="100"></textarea>
         </div>
         <div id="przyciski">
-            <button >Anuluj</button>
+            <button onclick="closeForm()">Anuluj</button>
             <button >Dodaj</button>
         </div>
     </div>
 </body>
-<style>
-    #nazwa{
-        width: 90%;
-        height: 20%;
-        float: left;
-        text-align: center;
-    }
-    #autor{
-        width: 90%;
-        height: 70%;
-        float: left;
-        text-align: center;
-    }
-    #przyciski{
-        text-align: center;
-        width: 90%;
-        height: 10%;
-        float: left;
-    }
-    
-</style>
 </html>
