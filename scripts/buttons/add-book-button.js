@@ -1,5 +1,5 @@
 
-function addBook() {
+function addBookUIButton() {
     if (config.closewindow == true) {
         config.closewindow = false;
         document.getElementById("modal-add-book-curtain").style.display = "initial";

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="scripts/buttons/add-book-button.js"></script>
+    <script src="scripts/buttons/add-book-to-list.js"></script>
     <script src="scripts/buttons/close-form-button.js"></script>
     <script src="scripts/config.js"></script>
     <script src="scripts/initializator.js"></script>
@@ -14,44 +15,63 @@
         }
     </script>
     <link rel="stylesheet" href="styles/modal-add-book.css">
+    <link rel="stylesheet" href="styles/toast-validation-error.css">
+    <link rel="stylesheet" href="styles/toast-success.css">
 </head>
 <body>
-    <button id="addBook" onclick="addBook()">Add Book</button>
+    <button id="addBook" onclick="addBookUIButton()">Add Book</button>
 
 
     <div id="modal-add-book-curtain" class="curtain"></div>
     <div id="modal-add-book" class="modal-add-book">
-        
         <button id="exit" onclick="closeForm()">X</button>
         <div id="nazwa" class="form-field">
-            <h2 class="form-label">Nazwa książki<span class="required">*</span>:</h2>
-            <input type="text">
+            <h2 class="form-label">Tytuł książki<span class="required">*</span>:</h2>
+            <input id="nazwa_input" type="text">
         </div>
         <div id="autor" class="form-field">
             <h2 class="form-label">Autor książki:</h2>
-            <input type="text">
+            <input id="autor_input" type="text">
         </div>
         <div id="grubosc" class="form-field">
             <h2 class="form-label">Grubość książki<span class="required">*</span>:</h2>
-            <input type="number" min="0.5" max="10" step="0.1" value="2">
+            <input id="grubosc_input" type="number" min="0.5" max="10" step="0.1" value="2">
             <h2 class="form-label">[cm]</h2>
         </div>
         <div id="rok" class="form-field">
             <h2 class="form-label">Rok wydania książki:</h2>
-            <input type="text">
+            <input id="rok_input" type="text">
         </div>
         <div id="rok" class="form-field">
             <h2 class="form-label">Wybierz kolor książki:</h2>
-            <input type="color" value="#aa0000">
+            <input id="kolor_input" type="color" value="#aa0000">
         </div>
         <div id="rok" class="form-field">
             <h2 class="form-label">Opis książki:</h2> <br/>
-            <textarea id="book-description" rows="5" cols="100"></textarea>
+            <textarea id="opis_input" id="book-description" rows="5" cols="100"></textarea>
+        </div>
+        <div id="wydawca" class="form-field">
+            <h2 class="form-label">Nazwa wydawcy:</h2>
+            <input id="wydawca_input" type="text">
+        </div>
+        <div id="oryginal" class="form-field">
+            <h2 class="form-label">Tytuł oryginału:</h2>
+            <input id="oryginal_input" type="text">
+        </div>
+        <div id="tlumacz" class="form-field">
+            <h2 class="form-label">Nazwisko tłumacza:</h2>
+            <input id="tlumacz_input" type="text">
         </div>
         <div id="przyciski">
             <button onclick="closeForm()">Anuluj</button>
-            <button >Dodaj</button>
+            <button onclick="addBookToList()">Dodaj</button>
         </div>
+    </div>
+    <div id="toast-validation-error">
+        Tytuł książki nie może być pusty!
+    </div>
+    <div id="toast-success">
+        Książka została dodana!
     </div>
 </body>
 </html>

@@ -1,15 +1,13 @@
 .modal-add-book {
     width: 70vw;
-    height: 60vh;
     min-width: 600px;
-    min-height: 400px;
+    min-height: 200px;
     box-shadow: 0px 0px 10px 8px rgb(79, 79, 79);
     position: absolute;
     top: 50vh;
     left: 50vw;
     transform: translate(-50%, -50%);
     background-color: white;
-
     display: none;
 }
 .curtain {
@@ -54,8 +52,5 @@
 }
 #przyciski{
     text-align: center;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    padding: 20px;
 }
