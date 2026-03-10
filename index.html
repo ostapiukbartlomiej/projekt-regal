@@ -7,6 +7,7 @@
     <script src="scripts/buttons/add-book-button.js"></script>
     <script src="scripts/buttons/add-book-to-list.js"></script>
     <script src="scripts/buttons/close-form-button.js"></script>
+    <script src="scripts/graphicsScripts/add-book-to-canvas.js"></script>
     <script src="scripts/config.js"></script>
     <script src="scripts/initializator.js"></script>
     <script>
@@ -14,12 +15,19 @@
             init();
         }
     </script>
+    <link rel="stylesheet" href="styles/book-container.css">
     <link rel="stylesheet" href="styles/modal-add-book.css">
     <link rel="stylesheet" href="styles/toast-validation-error.css">
     <link rel="stylesheet" href="styles/toast-success.css">
 </head>
 <body>
     <button id="addBook" onclick="addBookUIButton()">Add Book</button>
+    <div class="book-container">
+        <div class="book" data-id="1" style="background-color: #ff0000; width: 40px; height: 100px; cursor: pointer; left: 300px; top: 500px;" data-grubosc="2.0" data-color="#ff0000"></div>
+        <div class="book" data-id="1" style="background-color: #3300aa; width: 20px; height: 100px; cursor: pointer; left: 700px; top: 300px" data-grubosc="2.0" data-color="#ff0000"></div>
+        <div class="book" data-id="1" style="background-color: #1122dd; width: 50px; height: 100px; cursor: pointer; left: 500px; top: 250px;" data-grubosc="2.0" data-color="#ff0000"></div>
+    </div>
+    
 
 
     <div id="modal-add-book-curtain" class="curtain"></div>

@@ -18,6 +18,7 @@ function addBookToList() {
         let nazwisko_tlumacza = document.getElementById("tlumacz_input").value;
 
         let bookObj = {
+            id: ++config.last_id,
             name: tytul_ksiazki,
             author: autor_ksiazki,
             year: rok_wydania,
@@ -45,6 +46,7 @@ function addBookToList() {
         console.log(bookObj)
 
         config.books.push(bookObj);
+        addBookToCanvas(bookObj);
         showSuccessToast();
         closeForm();
     }
